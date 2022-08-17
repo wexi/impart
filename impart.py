@@ -1,9 +1,16 @@
 #!/usr/bin/env python3
 # coding: utf-8
 
-# Assembles local KiCad component libraries from downloaded Octopart,
-# Samacsys, Ultralibrarian and Snapeda zipfiles. Currently assembles just
-# symbols and footptints. Tested with KiCad 5.1.12 for Ubuntu.
+# Builds local KiCad "legacy" component libraries from downloaded
+# component zipfiles. Currently assembles just symbols and
+# footptints. Tested with KiCad 6.0.7.
+# 
+# Web sources:
+# 
+# octopart:       https://octopart.com/ or https://eeconcierge.com/
+# samacsys:       https://componentsearchengine.com/
+# ultralibrarian: https://www.ultralibrarian.com/
+# snapeda:        https://www.snapeda.com/
 
 from mydirs import SRC, LIB     # *CONFIGURE ME*
 import argparse
