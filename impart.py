@@ -21,17 +21,16 @@ import shutil
 import signal
 import zipfile
 
+PRJ = {0: 'octopart', 1: 'samacsys', 2: 'ultralibrarian', 3: 'snapeda'}
 
 def Signal(signum, stack):
     raise UserWarning('CTRL-C')
-
 
 def Xinput(prompt):
     # extended input to allow Emacs input backspace
     reply = input(prompt)
     index = reply.find('~') + 1
     return reply[index:]
-
 
 class Pretext:
     """input() with inserted text"""
@@ -55,7 +54,6 @@ class Pretext:
     def insert(self):
         readline.insert_text(self._pretext)
         readline.redisplay()
-
 
 class Select:
     """input() from select completions """
@@ -84,15 +82,10 @@ class Select:
 
         return echo
 
-
-PRJ = {0: 'octopart', 1: 'samacsys', 2: 'ultralibrarian', 3: 'snapeda'}
-
-
 class Catch(Exception):
     def __init__(self, value):
         self.catch = value
         super().__init__(self)
-
 
 def Zipper(root, suffix):
     """return zipfile.Path starting with root ending with suffix"""
@@ -109,7 +102,6 @@ def Zipper(root, suffix):
         return e.catch
 
     return None
-
 
 def Impart(zip):
     """zip is a pathlib.Path to import the symbol from"""
